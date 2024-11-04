@@ -4,11 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
-    <script src="./js/script.js"></script>
+    <title>RGB-to-HEX</title>
+    <script src="./js/script.js" defer></script>
 </head>
 <body>
-    
+    <div class="page-wrapper">
+        <h1 class="title">Конвертер кода цвета из RGB в HEX</h1>
+        <div class="rgb-block">
+            <p class="text">Введите код цвета в формате <strong>RGB</strong> (
+                <input type="text" placeholder="255">
+                <span>,</span>    
+                <input type="text" placeholder="255">
+                <span>,</span>  
+                <input type="text" class="error-input" placeholder="255">
+                <span>)</span> 
+            </p>
+            <button><img src="./img/arrow.svg" alt="arrow">
+            </button>
+        </div>
+        <!-- /.rgb-block -->
+        <div class="hex-block">
+
+        </div>
+        <!-- /.hex-block -->
+        <div class="visual-block">
+
+        </div>
+        <!-- /.visual-block -->
+        
+
+
+    </div>
+    <!-- /.page-wrapper -->
 </body>
 </html>
