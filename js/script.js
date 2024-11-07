@@ -4,22 +4,11 @@ const hexData = document.querySelector('.hex-data')
 const colorBlock = document.querySelector('.color-block')
 const errMessage = document.querySelector('.error-mess')
 
-convertBtn.disabled = 'true'
-
 rgbInput.forEach(item => {
     item.addEventListener('input', () => {
-        let val = item.value.replace(/\D/gi, '')
+        let val = item.value.replace(/\D/g, '')
         val = val.substring(0, 3)
-        if (val > 255) {
-            errMessage.classList.add('act')
-            item.classList.add('error-input')
-            console.log('макс. значение 255!!!');
-        } else {
-            errMessage.classList.remove('act')
-            item.classList.remove('error-input')
-        }
         item.value = val
-        console.log(item.value);
     })
 })
 
@@ -29,13 +18,13 @@ const getRGBColor = () => {
     rgbInput.forEach(item => {
         rgbColorArr.push(+item.value)
     })
-
     convertRGBToHex(rgbColorArr);
 }
 
 const convertRGBToHex = (arrRGB) => {
     let hex = '#'
     arrRGB.forEach(element => {
+        if (element <= 15) element = '0' + element
         hex += element.toString(16);
     });
     hexData.textContent = hex.toUpperCase();
@@ -43,7 +32,22 @@ const convertRGBToHex = (arrRGB) => {
 }
 
 convertBtn.addEventListener('click', () => {
-    getRGBColor()
+    let control = 0
+    rgbInput.forEach(item => {
+        if (item.value > 255) {
+            item.classList.add('error-input')
+            control += 1
+            console.log(control)
+        } else {
+            item.classList.remove('error-input')
+        }
+    })
+    if (control === 0) {
+        errMessage.classList.remove('act')
+        getRGBColor()
+    } else {
+        errMessage.classList.add('act')
+    }
 })
 
 
