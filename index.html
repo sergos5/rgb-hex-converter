@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/mysetup.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>RGB-to-HEX</title>
     <script src="./js/script.js" defer></script>
 </head>
+
 <body>
     <div class="page-wrapper">
 
@@ -21,33 +25,34 @@
             <div class="rgb-block">
                 <p class="text">Введите код цвета в формате <strong>RGB</strong> (
                     <input type="number" placeholder="255">
-                    <span>,</span>    
+                    <span>,</span>
                     <input type="number" placeholder="255">
-                    <span>,</span>  
-                    <input type="number" placeholder="255">
-                    <span>)</span> 
+                    <span>,</span>
+                    <input type="number" class="error-input" placeholder="255">
+                    <span>)</span>
                 </p>
                 <button class="convert-btn"><img src="./img/arrow.svg" alt="arrow">
-                </button>            
+                </button>
             </div>
             <!-- /.rgb-block -->
-            <p class="error-mess">введите значение от 0 до 255</p> 
+            <p class="error-mess">введите значение от 0 до 255</p>
         </div>
-        <!-- /.rgb-block-wrapper -->        
+        <!-- /.rgb-block-wrapper -->
 
         <div class="hex-block">
             <p class="text">Код цвета в формате <strong>HEX</strong></p>
-            <div class="hex-data">#FFFFFF</div>            
+            <div class="hex-data">#FFFFFF</div>
         </div>
 
         <!-- /.hex-block -->
         <div class="visual-block">
             <p class="text">Визуализация цвета</p>
-            <div class="color-block"></div> 
+            <div class="color-block"></div>
         </div>
         <!-- /.visual-block -->
 
     </div>
     <!-- /.page-wrapper -->
 </body>
+
 </html>
