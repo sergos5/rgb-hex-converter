@@ -4,15 +4,6 @@ const hexData = document.querySelector('.hex-data')
 const colorBlock = document.querySelector('.color-block')
 const errMessage = document.querySelector('.error-mess')
 
-rgbInput.forEach(item => {
-    item.addEventListener('input', () => {
-        let val = item.value.replace(/\D/g, '')
-        val = val.substring(0, 3)
-        item.value = val
-    })
-})
-
-
 const getRGBColor = () => {
     let rgbColorArr = []
     rgbInput.forEach(item => {
@@ -31,13 +22,21 @@ const convertRGBToHex = (arrRGB) => {
     colorBlock.style.backgroundColor = hex
 }
 
+rgbInput.forEach(item => {
+    item.addEventListener('input', () => {
+        let val = item.value.replace(/\D/g, '')
+        val = val.substring(0, 3)
+        item.value = val
+    })
+})
+
 convertBtn.addEventListener('click', () => {
     let control = 0
     rgbInput.forEach(item => {
         if (item.value > 255) {
             item.classList.add('error-input')
             control += 1
-            console.log(control)
+            //console.log(control)
         } else {
             item.classList.remove('error-input')
         }
