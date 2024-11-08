@@ -33,6 +33,7 @@ rgbInput.forEach(item => {
 convertBtn.addEventListener('click', () => {
     let control = 0
     rgbInput.forEach(item => {
+        if (!item.value) item.value = '0'
         if (item.value > 255) {
             item.classList.add('error-input')
             control += 1
