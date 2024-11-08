@@ -47,6 +47,8 @@ convertBtn.addEventListener('click', () => {
         getRGBColor()
     } else {
         errMessage.classList.add('act')
+        hexData.textContent = '#######';
+        colorBlock.style.backgroundColor = 'white'
     }
 })
 
